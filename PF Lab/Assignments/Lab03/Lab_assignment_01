@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main(){
+    printf("Name:Aisha Naz\n");
+    printf("Age:20\n");
+    printf("Department:Computer Science\n");
+    printf("Student ID:26K-1071\n");
+    printf("Section:BCS-1D\n");
+    printf("University Name:FAST University\n");
+    return 0;
+}
