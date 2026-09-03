@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main(){
+    int distance;
+    printf("Enter distance\n");
+    scanf("%d",&distance);
+    printf("distance in Kilometer:%d\n",distance);
+
+    int distance_meter;
+    distance_meter=distance*1000;
+    printf("distance in meter:%d\n",distance_meter);
+
+    int distance_centimeter;
+    distance_centimeter=distance_meter*100;
+    printf("distance in centimeter:%d\n",distance_centimeter);
+    return 0;
+}
