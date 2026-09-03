@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main(){
+    char Name[50];
+    int age;
+    char department[50];
+    char student_ID[50];
+    char University_name[50];
+
+    printf("Enter Name\n");
+    scanf("%s",Name);
+    
+    printf("Enter age\n");
+    scanf("%d",&age);
+    
+    printf("Enter department\n");
+    scanf("%s",department);
+    
+    printf("Enter student_ID\n");
+    scanf("%s",student_ID);
+
+    printf("Enter University_name\n");
+    scanf("%s",University_name);
+    
+    printf("Name:%s\n",Name);
+    printf("age:%d\n",age);
+    printf("department:%s\n",department);
+    printf("student_ID:%s\n",student_ID);
+    printf("University_name:%s\n",University_name);
+    return 0;
+}
