@@ -1,0 +1,64 @@
+#include<stdio.h>
+
+int main(){
+int Card_status; 
+int PIN_correctness; 
+int Account_balance;
+int Withdrawal_amount;
+int New_balance;
+int notes_2000;
+int notes_500;
+int notes_100;
+int remainder;
+
+
+printf("Enter card status \n");
+printf("1 for Valid\n");
+printf("0 for Blocked\n");
+scanf("%d",&Card_status);
+
+printf("Enter pin correctness \n");
+printf("1 for correct\n");
+printf("0 for wrong\n");
+scanf("%d",&PIN_correctness);
+
+printf("Enter accout balane \n");
+scanf("%d",&Account_balance);
+
+printf("Enter withdrawl amount \n");
+scanf("%d",&Withdrawal_amount);
+
+if(Card_status==0){
+    printf("Card blocked. Contact bank\n");
+}
+else if(PIN_correctness==0){
+    printf("Incorrect PIN\n");
+}
+else if(Withdrawal_amount<=0){
+    printf("Invalid Amount\n");
+}
+else if(Withdrawal_amount>Account_balance){
+    printf("Insufficient balance\n");
+}
+else if(Withdrawal_amount>25000){
+    printf("Daily limit exist\n");
+}
+else if((Account_balance-Withdrawal_amount)<1000){
+    printf("Minimum balance must be maintained\n");
+}
+else{
+    printf("dispense cash\n");
+    New_balance = Account_balance-Withdrawal_amount;
+    notes_2000=Withdrawal_amount/2000;
+    remainder=Withdrawal_amount%2000;
+    notes_500=remainder/500;
+    remainder=remainder%500;
+    notes_100=remainder/100;
+    
+    printf("Your new balance is %d\n",New_balance);
+    printf("2000 notes is %d\n",notes_2000);
+    printf("500 notes is %d\n",notes_500);
+    printf("100 notes is %d\n",notes_100);
+    printf("Please collect your cash\n");
+   }
+}

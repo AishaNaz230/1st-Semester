@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+int main(){
+    float marks;
+    int attendence;
+    int income;
+
+    printf("Enter marks out of 100");
+    scanf("%f",&marks);
+
+    printf("Enter attendence percentage out of 100");
+    scanf("%d",&attendence);
+
+    printf("Enter family income");
+    scanf("%d",&income);
+
+    if(marks<50){
+        printf("Not eligible: marks too low");
+        return 0;
+    }
+    else if(attendence<75){
+        printf("Not eligible: attendence too low");
+        return 0;
+    }
+    else if(income>800000){
+        printf("Not eligible: income too high");
+        return 0;
+    }
+    else{
+        if(marks>=90 && attendence>=90){
+            printf("Full scholarship");
+        }
+        else if(marks>=75 && attendence>=85){
+            printf("Half scholarship");
+        }
+        else{
+            printf("Quater scholarship");
+        }
+    } 
+}

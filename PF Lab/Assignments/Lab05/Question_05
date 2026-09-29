@@ -1,0 +1,102 @@
+#include<stdio.h>
+
+int main(){
+    int time;
+    int motion;
+    int light_level;
+    int room;
+    int cooking;
+
+    printf("Enter time (0_23)\n");
+    scanf("%d",&time);
+
+    printf("Enter motion detected(1/0): \n");
+    scanf("%d",&motion);
+
+    printf("Enter light level (0_100)\n");
+    scanf("%d",&light_level);
+
+    printf("Enter room type\n");
+    printf("1 for living room\n");
+    printf("2 for bedroom\n");
+    printf("3 for kitchen\n");
+    scanf("%d",&room);
+
+    
+    switch(room){
+        case 1:
+        if(motion==1){
+    if(time>=6 && time<18){
+        printf("Day mode: lights ON\n");
+   }
+   else if(time>=18 && time<23){
+    printf("Evening mode:dim light\n");
+   }
+   else if(time>=23 || time<6){
+    printf("Night mode: lights off\n");
+   }
+   }
+   else if(motion==0){
+    printf("Away mode: all off\n");
+   }
+   else{
+    printf("Invali motion");
+    return 0;
+   }
+   break;
+   case 2:
+   if(motion==1){
+   if(time>=6 && time<18){
+        printf("Day mode: lights ON\n");
+   }
+   else if(time>=18 && time<23){
+    printf("Evening mode:dim light\n");
+   }
+   else if(time>=23 || time<6){
+    printf("Night mode: lights off\n");
+   }
+}
+   else if(motion==0){
+    printf("Away mode: all off\n");
+   }
+   else{
+    printf("Invali motion");
+    return 0;
+   }
+   break;
+   case 3:
+   if(motion==1){
+   if(time>=6 && time<18){
+        printf("Day mode: lights ON\n");
+   }
+   else if(time>=18 && time<23){
+    printf("Evening mode:dim light\n");
+   }
+   else if(time>=23 || time<6){
+    printf("Night mode: lights off\n");
+   }
+}
+   else if(motion==0){
+    printf("Away mode: all off\n");
+   }
+   else{
+    printf("Invali motion");
+    return 0;
+   }
+   printf("Enter you want cooking(1/0)\n");
+   printf("1 for cooking\n");
+   printf("0 for no cooking\n");
+   scanf("%d",&cooking);
+
+   if(cooking==1){
+    printf("turn on exhaust fan\n");
+   }
+   break;
+   default:
+    printf("Invalid room\n");
+   
+ } 
+
+
+
+}

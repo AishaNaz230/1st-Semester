@@ -1,0 +1,66 @@
+#include<stdio.h>
+
+int main(){
+    int vehicle;
+    float hours;
+    int status;
+    float fee;
+    float final_fee;
+
+    printf("Enter vehicle type: ");
+    printf("1 for bike\n");
+    printf("2 for car\n");
+    printf("3 for truck\n");
+    scanf("%d",&vehicle);
+
+    if(vehicle>3 || vehicle<1){
+        printf("Invalid vehicle\n");
+        return 0;
+    }
+
+    printf("Enter member ship status: \n");
+    printf("1 for member\n");
+    printf("0 for non member\n");
+    scanf("%d",&status);
+    if(status>1 || status<0){
+        printf("Invalid\n");
+        return 0;
+    }
+    printf("Enter how many hours you want to parked: \n");
+    scanf("%f",&hours);
+    if(hours<=0){
+        printf("Invalid duration\n");
+        return 0;
+    }
+    if(vehicle==1){
+        fee=20*hours;
+        printf("Your fee is :%f \n",fee);
+    }
+    if(vehicle==2){
+        if(hours<=2){
+            fee=50;
+        }
+        else{
+            fee= 50 + 30*(hours-2);
+        }
+        printf("Your fee is :%f \n",fee);
+    }
+    if(vehicle==3){
+        if(hours<=3){
+            fee=100;
+        }
+        else{
+            fee = 100 + 50 * (hours-3);
+        }
+    }
+    if(status==1&&fee>200){
+        final_fee=fee-(0.15*fee);
+        
+    }
+    else{
+        final_fee=fee;
+        
+    }
+    printf("======FINAL FEE=====");
+    printf("your final fee is: %f \n",final_fee);   
+}

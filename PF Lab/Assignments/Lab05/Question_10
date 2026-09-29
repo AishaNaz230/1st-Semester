@@ -1,0 +1,92 @@
+#include<stdio.h>
+
+int main(){
+    int accuracy;
+    int confidence_score;
+    int size;
+    int user_role;
+    int status;
+    float model_score;
+    float average;
+
+    printf("Enter accuracy (0_100)\n");
+    scanf("%d",&accuracy);
+
+    if(accuracy<0 || accuracy>100){
+        printf("Invalid accuracy\n");
+        return 0;
+    }
+
+    printf("Enter confidence score (0_100)\n");
+    scanf("%d",&confidence_score);
+
+    if(confidence_score<0 || confidence_score>100){
+        printf("Invalid accuracy\n");
+        return 0;
+    }
+
+    printf("Enter data set size\n");
+    scanf("%d",&size);
+
+    printf("Enter user role\n");
+    printf("1 for Intern\n");
+    printf("2 for Engineer\n");
+    printf("3 for Admin\n");
+    scanf("%d",&user_role);
+
+    printf("Enter model status flags\n");
+    printf("1 for Trained\n");
+    printf("2 for Validated\n");
+    printf("4 for Approved\n");
+    printf("8 for Deprecated\n");
+    scanf("%d",&status);
+
+    if(size/1000.0>10){
+       model_score=(accuracy*0.5)+(confidence_score*0.3)+(10*2);
+    }
+    else{
+        model_score=(accuracy*0.5)+(confidence_score*0.3)+((size/1000.0)*2);
+    }
+    printf("Model score is %.2f\n",model_score);
+    if(status & 8){
+        printf("Rejected: model deprecated\n");
+    }
+    else if(!(status & 1)){
+        printf("Rejected: not trained\n");
+    }
+    else if(!(status & 2)){
+        printf("Rejected: not validated\n");
+    }
+    else if(!(status & 4)){
+        printf("Pending: awaiting approval\n");
+    }
+    else if(accuracy<70 || confidence_score<60){
+        printf("Rejected: performance too low\n");
+    }
+    else if(size<5000){
+        printf("Rejected: dataset too small\n");
+    }
+    else if(user_role==1){
+        printf("Denied: interns cannot deploy\n");
+    }
+    else if(user_role==2 && model_score<80){
+        printf("Denied: engineer needs higher score\n");
+    }
+    else{
+        printf("Approved for deployment\n");
+    }
+    average=(accuracy+confidence_score)/2.0;
+    if(model_score>average){
+        printf("Model score is above the average of accuracy and confidence\n");
+    }
+    else{
+        printf("Model score is not above the average of accuracy and confidence\n");
+    }
+    printf("=============Size of variables==========\n");
+    printf("Accuracy is %zu bytes\n",sizeof(accuracy));
+    printf("confidence is %zu bytes\n",sizeof(confidence_score));
+    printf("Dataset size is %zu bytes\n",sizeof(size));
+    printf("Role is %zu bytes\n",sizeof(user_role));
+    printf("Status is %zu bytes\n",sizeof(status));
+    printf("Model score is %zu bytes\n",sizeof(model_score));
+}

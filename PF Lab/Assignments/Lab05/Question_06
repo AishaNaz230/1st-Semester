@@ -1,0 +1,102 @@
+#include <stdio.h>
+
+int main()
+{
+    int category, sub_Type, delay;
+
+    printf("Hi! Your bot is here to help and redirect your messages to the right agent to resolve.\n\n");
+
+    printf("Select a category from the options below:\n\n");
+    printf("1 for Greeting\n");
+    printf("2 for Query\n");
+    printf("3 for Complaint\n");
+    printf("4 for Feedback\n");
+    scanf("%d", &category);
+
+    switch (category)
+    {
+        case 1:
+            printf("\nSelect Greeting Type from the options below:\n\n");
+            printf("1 for Morning\n");
+            printf("2 for Evening\n");
+            scanf("%d", &sub_Type);
+
+            if (sub_Type == 1)
+                printf("Good morning! How can I help you?\n");
+            else if (sub_Type == 2)
+                printf("Good evening! How can I help you?\n");
+            else
+                printf("Invalid selection.\n");
+
+            break;
+
+        case 2:
+            printf("\nSelect Query Type from the options below:\n\n");
+            printf("1 for Product\n");
+            printf("2 for Billing\n");
+            printf("3 for Technical\n");
+            scanf("%d", &sub_Type);
+
+            if (sub_Type == 1)
+                printf("Please tell me your product-related question.\n");
+            else if (sub_Type == 2)
+                printf("Please provide your billing details.\n");
+            else if (sub_Type == 3)
+                printf("Please describe your technical issue.\n");
+            else
+                printf("Invalid selection.\n");
+
+            break;
+
+        case 3:
+            printf("\nSelect Complaint Type from the options below:\n\n");
+            printf("1 for Delivery\n");
+            printf("2 for Quality\n");
+            scanf("%d", &sub_Type);
+
+            if (sub_Type == 1)
+            {
+                printf("Is your order delayed? (If Yes, press 1; if No, press 0): ");
+                scanf("%d", &delay);
+
+                if (delay == 1)
+                    printf("We sincerely apologize for the delay in your order. Redirecting to an agent for review.\n");
+                else if (delay == 0)
+                    printf("We apologize for the delivery issue. Redirecting to an agent to look into it.\n");
+                else
+                    printf("Invalid selection.\n");
+            }
+            else if (sub_Type == 2)
+            {
+                printf("We apologize for the quality issue. We will investigate it.\n");
+            }
+            else
+            {
+                printf("Invalid selection.\n");
+            }
+
+            break;
+
+        case 4:
+            printf("\nSelect Feedback Type from the options below:\n\n");
+            printf("1 for Positive\n");
+            printf("2 for Negative\n");
+            scanf("%d", &sub_Type);
+
+            if (sub_Type == 1)
+                printf("Thank you for your positive feedback!\n");
+            else if (sub_Type == 2)
+                printf("We are sorry to hear that. Redirecting to an agent to investigate the issue.\n");
+            else
+                printf("Invalid selection.\n");
+
+            break;
+
+        default:
+            printf("Invalid selection.\n");
+    }
+
+    printf("\n\n---- Thanks! Closing the chat... Have a nice day! ----\n");
+
+    return 0;
+}

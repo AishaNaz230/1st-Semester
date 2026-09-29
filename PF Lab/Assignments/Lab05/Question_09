@@ -1,0 +1,85 @@
+#include <stdio.h>
+
+int main()
+{
+    int permissions;
+
+    printf("Enter permission value:\n\n");
+    printf("1 for READ\n");
+    printf("2 for WRITE\n");
+    printf("4 for EXECUTE\n");
+    printf("8 for DELETE\n");
+    printf("16 for ADMIN\n");
+
+    scanf("%d", &permissions);
+
+    if (permissions & 16)
+    {
+        printf("\nFull access: admin\n");
+    }
+    else
+    {
+        if ((permissions & 8) && (permissions & 2))
+        {
+            printf("\nAccess: delete and write\n");
+        }
+        else
+        {
+            if ((permissions & 4) && !(permissions & 2))
+            {
+                printf("\nAccess: execute only\n");
+            }
+            else
+            {
+                if ((permissions & 1) && !(permissions & 2) && !(permissions & 4))
+                {
+                    printf("\nAccess: read-only\n");
+                }
+                else
+                {
+                    if (!(permissions & 1) &&
+                        !(permissions & 2) &&
+                        !(permissions & 4) &&
+                        !(permissions & 8) &&
+                        !(permissions & 16))
+                    {
+                        printf("\nAccess denied\n");
+                    }
+                    else
+                    {
+                        printf("\nAccess: custom permissions\n");
+                    }
+                }
+            }
+        }
+    }
+
+    printf("\nPermission details:\n");
+
+    if (permissions & 1)
+    {
+        printf("READ is set.\n");
+    }
+
+    if (permissions & 2)
+    {
+        printf("WRITE is set.\n");
+    }
+
+    if (permissions & 4)
+    {
+        printf("EXECUTE is set.\n");
+    }
+
+    if (permissions & 8)
+    {
+        printf("DELETE is set.\n");
+    }
+
+    if (permissions & 16)
+    {
+        printf("ADMIN is set.\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int main()
+{
+    int stream, interest, medicine;
+
+    printf("Hi! Your course advisor is here to help you choose the right specialization.\n\n");
+    printf("Select stream from the below Options:\n\n1 for Science\n2 for Commerce\n3 for Arts\n");
+
+    scanf("%d", &stream);
+
+    switch (stream)
+    {
+        case 1:
+            printf("\nSelect Science Interest from the below Options:\n\n1 for Biology\n2 for Physics\n3 for Chemistry\n");
+            scanf("%d", &interest);
+
+            if (interest == 1)
+            {
+                printf("\nAre you interested in Medicine? (If Yes, Press 1 else if No, Press 0): ");
+                scanf("%d", &medicine);
+
+                if (medicine == 1)
+                    printf("Recommended Course: MBBS\n");
+                else if (medicine == 0)
+                    printf("Recommended Course: Biotechnology\n");
+                else
+                    printf("Invalid choice.\n");
+            }
+            else if (interest == 2)
+            {
+                printf("Recommended Course: Physics\n");
+            }
+            else if (interest == 3)
+            {
+                printf("Recommended Course: Chemistry\n");
+            }
+            else
+            {
+                printf("Invalid choice.\n");
+            }
+
+            break;
+
+        case 2:
+            printf("\nSelect Commerce Interest from the below Options:\n\n1 for Accounting\n2 for Marketing\n");
+            scanf("%d", &interest);
+
+            if (interest == 1)
+            {
+                printf("Recommended Course: Accounting\n");
+            }
+            else if (interest == 2)
+            {
+                printf("Recommended Course: Marketing\n");
+            }
+            else
+            {
+                printf("Invalid choice.\n");
+            }
+
+            break;
+
+        case 3:
+            printf("\nSelect Arts Interest from the below Options:\n\n1 for Literature\n2 for History\n3 for Psychology\n");
+            scanf("%d", &interest);
+
+            if (interest == 1)
+            {
+                printf("Recommended Course: Literature\n");
+            }
+            else if (interest == 2)
+            {
+                printf("Recommended Course: History\n");
+            }
+            else if (interest == 3)
+            {
+                printf("Recommended Course: Psychology\n");
+            }
+            else
+            {
+                printf("Invalid choice.\n");
+            }
+
+            break;
+
+        default:
+            printf("Invalid choice.\n");
+    }
+
+    return 0;
+}
