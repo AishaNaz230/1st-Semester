@@ -1,0 +1,5 @@
+Food           1200.00
+Transport       650.00
+Books           850.00
+Mobile          300.00
+utilities      3000.00

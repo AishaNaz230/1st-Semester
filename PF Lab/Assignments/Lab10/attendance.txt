@@ -1,0 +1,5 @@
+1   Ayesha           18
+2   Bilal            16
+3   Hamza            20
+4   Sana             12
+5   Zainab           16

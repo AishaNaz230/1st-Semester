@@ -1,0 +1,5 @@
+Karachi     32.5
+Lahore      31.0
+Islamabad   24.3
+Quetta      18.7
+Peshawar    28.9
