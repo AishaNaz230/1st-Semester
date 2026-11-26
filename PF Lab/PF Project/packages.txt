@@ -1,0 +1,3 @@
+Muree|standard|public|8|1000.00
+Canada|Business|Business|4|2003200.00
+Kahmir|economic|Business|25|2.00
